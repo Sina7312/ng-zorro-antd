@@ -27,6 +27,8 @@ import { NzRangePickerComponent } from './range-picker.component';
 import { NzWeekPickerComponent } from './week-picker.component';
 import { NzYearPickerComponent } from './year-picker.component';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -53,6 +55,8 @@ import { NzYearPickerComponent } from './year-picker.component';
     CalendarFooterComponent,
     InnerPopupComponent,
     DateRangePopupComponent
+  ],
+  providers   : [
   ]
 })
 export class NzDatePickerModule {}

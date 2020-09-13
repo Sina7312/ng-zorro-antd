@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import getISOWeek from 'date-fns/getISOWeek';
+import getISOWeek from 'date-fns-jalali/getISOWeek';
 import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
+
 
 @Component({
   selector: 'nz-demo-date-picker-basic',
@@ -48,4 +49,6 @@ export class NzDemoDatePickerBasicComponent {
     this.i18n.setLocale(this.isEnglish ? zh_CN : en_US);
     this.isEnglish = !this.isEnglish;
   }
+
+
 }

@@ -39,6 +39,7 @@ export class MonthTableComponent extends AbstractTable implements OnChanges {
   makeBodyRows(): DateBodyRow[] {
     const months: DateBodyRow[] = [];
     const currentMonth = this.value && this.value.getMonth();
+    console.log('current month', currentMonth);
 
     let monthValue = 0;
     for (let rowIndex = 0; rowIndex < this.MAX_ROW; rowIndex++) {

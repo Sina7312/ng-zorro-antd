@@ -22,10 +22,11 @@ import isSameYear from 'date-fns/isSameYear';
 import isToday from 'date-fns/isToday';
 import isValid from 'date-fns/isValid';
 import setDay from 'date-fns/setDay';
-import setMonth from 'date-fns/setMonth';
+import setMonth from 'date-fns-jalali/setMonth';
 import setYear from 'date-fns/setYear';
 import startOfMonth from 'date-fns/startOfMonth';
 import startOfWeek from 'date-fns/startOfWeek';
+import { getYear, getMonth, getDay } from 'date-fns-jalali';
 import { warn } from 'ng-zorro-antd/core/logger';
 import { IndexableObject, NzSafeAny } from 'ng-zorro-antd/core/types';
 
@@ -101,15 +102,15 @@ export class CandyDate implements IndexableObject {
   // -----------------------------------------------------------------------------\
 
   getYear(): number {
-    return this.nativeDate.getFullYear();
+    return getYear(this.nativeDate);
   }
 
   getMonth(): number {
-    return this.nativeDate.getMonth();
+    return getMonth(this.nativeDate);
   }
 
   getDay(): number {
-    return this.nativeDate.getDay();
+    return getDay(this.nativeDate);
   }
 
   getTime(): number {
@@ -159,6 +160,7 @@ export class CandyDate implements IndexableObject {
   // NOTE: month starts from 0
   // NOTE: Don't use the native API for month manipulation as it not restrict the date when it overflows, eg. (new Date('2018-7-31')).setMonth(1) will be date of 2018-3-03 instead of 2018-2-28
   setMonth(month: number): CandyDate {
+    console.log('set moooonth', new CandyDate(setMonth(this.nativeDate, month)));
     return new CandyDate(setMonth(this.nativeDate, month));
   }
 
